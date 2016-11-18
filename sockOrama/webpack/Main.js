@@ -42,6 +42,11 @@ class Main extends React.Component {
         })
     }
 
+    getPostCount() {
+        // console.log('post count', sharedState().posts, sharedState().user)
+        return sharedState().cartQuantity.length
+    }
+
     render() {
         return <div>
             <div className="header row">
@@ -61,7 +66,7 @@ class Main extends React.Component {
                     {/* TODO: where # is, put the counter of items.*/}
                     <button className="cartButton btn btn-default btn-lg">
                         <div className="glyphicon glyphicon-shopping-cart"></div>
-                        <span className="badge">{this.state.cartQuantity}</span>
+                        <span className="badge">{this.getPostCount()}</span>
                     </button>
                     </Link>
                 </div>
